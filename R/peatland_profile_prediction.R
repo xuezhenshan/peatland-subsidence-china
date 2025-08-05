@@ -35,7 +35,7 @@ peatland_model <- function(data_csv, variable_name, output_prefix) {
   # Train Random Forest model
   formula_str <- as.formula(paste(variable_name, "~ ."))
   model <- randomForest(formula_str, data = train_data,
-                        ntree = 2000, mtry = 4, nodesize = 10)
+                        ntree = 1000, mtry = 4, nodesize = 10)
   
   # Predict and evaluate
   predictions <- predict(model, test_data)
